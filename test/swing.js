@@ -226,8 +226,6 @@ describe('DOM', () => {
           const spy = sinon.spy();
           const env = setupEnv({transform: spy});
 
-          env.card.on('transform', spy);
-
           env.card.trigger('panstart');
           env.card.trigger('panmove', {
             deltaX: 10,
@@ -252,7 +250,7 @@ describe('DOM', () => {
             expect(spy.callCount).to.equal(3);
 
             done();
-          }, 30);
+          }, 50);
         });
       });
     });
