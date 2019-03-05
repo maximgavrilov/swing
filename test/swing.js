@@ -192,8 +192,6 @@ describe('DOM', () => {
             rotation: spy
           });
 
-          env.card.on('rotation', spy);
-
           env.card.trigger('panstart');
           env.card.trigger('panmove', {
             deltaX: 10,
@@ -218,7 +216,7 @@ describe('DOM', () => {
             expect(spy.callCount).to.equal(3);
 
             done();
-          }, 30);
+          }, 50);
         });
       });
       describe('transform', () => {
