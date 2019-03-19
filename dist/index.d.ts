@@ -9,15 +9,15 @@ declare module 'swing' {
         UP: symbol;
     };
 
-    interface Event {
+    interface TargetedEvent {
         target: HTMLElement;
     };
 
-    interface DirectedEvent implements Event {
+    interface DirectedEvent extends TargetedEvent {
         throwDirection: Direction;
     };
 
-    interface DragMoveEvent implements DirectedEvent {
+    interface DragMoveEvent extends DirectedEvent {
         offset: number;
         throwOutConfidence: number;
     };
@@ -47,13 +47,13 @@ declare module 'swing' {
          * @returns {undefined}
          */
         on(eventName: 'destroyCard', listener: (card: Card) => void): void;
-        on(eventName: 'dragend', listener: (e: Event) => void): void;
+        on(eventName: 'dragend', listener: (e: TargetedEvent) => void): void;
         on(eventName: 'dragmove', listener: (e: DragMoveEvent) => void): void;
-        on(eventName: 'dragstart', listener: (e: Event) => void): void;
+        on(eventName: 'dragstart', listener: (e: TargetedEvent) => void): void;
         on(eventName: 'throwin', listener: (e: DirectedEvent) => void): void;
         on(eventName: 'throwout', listener: (e: DirectedEvent) => void): void;
         on(eventName: 'throwoutdown', listener: (e: DirectedEvent) => void): void;
-        on(eventName: 'throwoutend', listener: (e: Event) => void): void;
+        on(eventName: 'throwoutend', listener: (e: TargetedEvent) => void): void;
         on(eventName: 'throwoutleft', listener: (e: DirectedEvent) => void): void;
         on(eventName: 'throwoutright', listener: (e: DirectedEvent) => void): void;
         on(eventName: 'throwoutup', listener: (e: DirectedEvent) => void): void;
