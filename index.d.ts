@@ -13,11 +13,11 @@ declare module 'swing' {
         target: HTMLElement;
     };
 
-    interface DirectedEvent implements TargetedEvent {
+    interface DirectedEvent extends TargetedEvent {
         throwDirection: Direction;
     };
 
-    interface DragMoveEvent implements DirectedEvent {
+    interface DragMoveEvent extends DirectedEvent {
         offset: number;
         throwOutConfidence: number;
     };
