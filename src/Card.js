@@ -383,6 +383,7 @@ const Card = (stack, targetElement, prepend) => {
    * @returns {undefined}
    */
   card.throwOut = (coordinateX, coordinateY, direction) => {
+    throwOutDistance = config.throwOutDistance(config.minThrowOutDistance, config.maxThrowOutDistance);
     throwWhere(Card.THROW_OUT, coordinateX, coordinateY, direction);
   };
 

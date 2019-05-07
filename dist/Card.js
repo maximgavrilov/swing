@@ -399,6 +399,7 @@ var Card = function Card(stack, targetElement, prepend) {
    * @returns {undefined}
    */
   card.throwOut = function (coordinateX, coordinateY, direction) {
+    throwOutDistance = config.throwOutDistance(config.minThrowOutDistance, config.maxThrowOutDistance);
     throwWhere(Card.THROW_OUT, coordinateX, coordinateY, direction);
   };
 
